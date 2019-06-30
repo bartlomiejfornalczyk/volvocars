@@ -94,6 +94,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3352f0', end
 overflow: hidden;
 
 }
+.fa{
+    color: white;
+}
 .cars__vehicle{
     padding: 20px;
     width: 100vw;
@@ -125,6 +128,7 @@ overflow: hidden;
       height: 70%;
       filter: opacity(0.5);
       cursor: pointer;
+      outline: none;
 }
 .slider__item--active{
     filter: opacity(1);
