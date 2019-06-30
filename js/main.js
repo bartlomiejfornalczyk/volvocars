@@ -1,6 +1,12 @@
 let navBtn = document.querySelector(".nav__button");
 let nav = document.querySelector(".nav__list");
-
+let navItem = document.querySelectorAll(".nav__item");
+navItem.forEach(e => {e.addEventListener("click", collapseNav)});
+function collapseNav(){
+    navBtn.classList.toggle("fa-close");
+        navBtn.classList.add("fa-bars");
+    nav.style.transform = "translateX(100vw)";
+}
 navBtn.addEventListener("click", showNav);
 function showNav() {
     if(navBtn.classList.contains("fa-bars"))
@@ -8,27 +14,29 @@ function showNav() {
         navBtn.classList.remove("fa-bars");
         navBtn.classList.toggle("fa-close");
         nav.style.transform = "translateX(0)";
+        
     }
     else{
-        navBtn.classList.toggle("fa-close");
-        navBtn.classList.add("fa-bars");
-        nav.style.transform = "translateX(100vw)";
+        collapseNav();
     }
 }
 hdr = document.querySelector(".nav");
-let x = document.body.offsetHeight/10;
-// document.addEventListener("scroll", function(){
+let x = window.getComputedStyle(hdr).height;
+document.addEventListener("scroll", function(){
     
-//     if(Math.round(x) == window.pageYOffset)
-//     {
-//         hdr.style.backgroundColor="#dbdbe0"; 
-//     }
-//     // hdr.style.backgroundColor="white";
-//     else if(window.pageYOffset == 0)
-//     {
-//         hdr.style.backgroundColor="rgba(24,38,109,1)"; 
-//     }
-// })
+    if(window.pageYOffset >= parseInt(x))
+    {
+        
+        hdr.style.backgroundColor="white"; 
+        navBtn.style.color="rgba(24,38,109,1)"
+    }
+    // hdr.style.backgroundColor="white";
+    else if(window.pageYOffset == 0)
+    {
+        navBtn.style.color="white"
+        hdr.style.backgroundColor="rgba(24,38,109,1)"; 
+    }
+})
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -51,36 +59,35 @@ sliders.forEach(e => {
 let cars = document.querySelector(".cars");
 let carsWidth = cars.offsetWidth;
 let move = carsWidth/howManySlides;
-let jitter = 30;
- 
+let jitter =20;
+let last = 0;
 async function changeSlide(e)
 {
     id = e.srcElement.id - 1;
     translate = id*move;
     // actual = cars.style.transform;
     // console.log(actual);
-    last = window.getComputedStyle(cars).getPropertyValue("transform").match(/(-?[0-9\.]+)/g);
-    if(last)
-    {
-        last = last[4];
-    }
-    else{
-        last = 0;
-    }
+    // last = window.getComputedStyle(cars).getPropertyValue("transform").match(/(-?[0-9\.]+)/g);
+    // if(last)
+    // {
+    //     last = last[4];
+    // }
+    // else{
+    //     last = 0;
+    // }
+    
     // console.log(e.srcElement);
     sliders.forEach(v => {
         v.classList.remove("slider__item--active");
     });
     e.srcElement.classList.toggle("slider__item--active")
-    cars.style.transform= "translateX(-"+(last+jitter)+"px)";
-        await sleep(200);
-        cars.style.transform= "translateX(-"+translate+"px)";
-    // if(id==1){
-    //     cars.style.transform = "translateX("+jitter+"vw)";
-    //     await sleep(200);
-    // }
-    // else{
-
-    // }
+    
+    
+    cars.style.transform= "translateX("+(jitter+last)+"px)";
+    await sleep(250);
+    cars.style.transform= "translateX("+(last)+"px)";
+    await sleep(250);
+    cars.style.transform= "translateX(-"+translate+"px)";
+    last = -translate;
     
 }

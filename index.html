@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Volvo Cars - all you need to drive safely"> 
     <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
     <title>Volvo Cars</title>
     <link rel="stylesheet" href="css/style.css">
@@ -14,30 +15,33 @@
             <img src="images/volvologo.png" alt="Volvo Cars logo" class="nav__img">
             <i class="fa fa-bars nav__button"></i>
             <ul class="nav__list">
-                <li class="nav__item"><a class="nav__link" href="#about">About us</a></li>
+                <li class="nav__item"><a class="nav__link" href="#cars">Newest cars</a></li>
                 <li class="nav__item"><a class="nav__link" href="#offer">Offer</a></li>
+                <li class="nav__item"><a class="nav__link" href="#about">About us</a></li>
                 <li class="nav__item"><a class="nav__link" href="#test">Test drive</a></li>
                 <li class="nav__item"><a class="nav__link" href="#contact">Contact us</a></li>
             </ul>
     </nav>
-    <div class="cars">
+    <div class="cars" id="cars">
         <div class="cars__vehicle cars__vehicle--active">
             <p class="cars__title">Volvo <span class="cars__title--model">XC90</span></p>
             <p class="cars__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur modi ipsa, quo explicabo reiciendis numquam suscipit debitis molestiae. Iste quam cupiditate aut modi suscipit hic!</p>
             <img src="https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2019/volvo/xc-90/momentum/suv/exteriorColors/12934_cc0640_001_707.png" alt="Volvo XC90" class="cars__img">
-            <p class="cars__desc--right"></p>
+            <p class="cars__desc--right">
+                <button class="cars__button">Learn more!</button>
+            </p>
         </div>
         <div class="cars__vehicle">
             <p class="cars__title">Volvo <span class="cars__title--model">V40</span></p>
             <p class="cars__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur modi ipsa, quo explicabo reiciendis numquam suscipit debitis molestiae. Iste quam cupiditate aut modi suscipit hic!</p>
             <img src="https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2019/volvo/xc-90/momentum/suv/exteriorColors/12934_cc0640_001_707.png" alt="Volvo V40" class="cars__img">
-            <p class="cars__desc--right"></p>
+            <p class="cars__desc--right"><button class="cars__button">Learn more!</button></p>
         </div>
         <div class="cars__vehicle">
             <p class="cars__title">Volvo <span class="cars__title--model">XC90</span></p>
             <p class="cars__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur modi ipsa, quo explicabo reiciendis numquam suscipit debitis molestiae. Iste quam cupiditate aut modi suscipit hic!</p>
             <img src="https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2019/volvo/xc-90/momentum/suv/exteriorColors/12934_cc0640_001_707.png" alt="Volvo S90" class="cars__img">
-            <p class="cars__desc--right"></p>
+            <p class="cars__desc--right"><button class="cars__button">Learn more!</button></p>
         </div>
     </div>
     <div class="slider">
@@ -45,6 +49,49 @@
         <img src="https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2019/volvo/xc-90/momentum/suv/exteriorColors/12934_cc0640_001_707.png" alt="V40" class="slider__item" id="2">
         <img src="https://img.sm360.ca/ir/w640h390c/images/newcar/ca/2019/volvo/xc-90/momentum/suv/exteriorColors/12934_cc0640_001_707.png" alt="S90" class="slider__item" id="3">
     </div>
+   <div class="offer" id="offer">
+       <h1 class="offer__title">Our offer includes:</h1>
+       <div class="offer__list">
+           <div class="offer__item">
+                <i class="fa fa-cog offer__icon"></i>
+                <p class="offer__desc">Authorised Workshop</p>
+           </div>
+           <div class="offer__item offer__item--gray">
+                <i class="fa fa-dashboard offer__icon"></i>
+                <p class="offer__desc">Car tuning</p>
+           </div>
+          
+        <div class="offer__item">
+            <i class="fa fa-sun-o offer__icon"></i>
+            <p class="offer__desc">Car detailing</p>
+       </div>
+       <div class="offer__item offer__item--gray">
+        <i class="fa fa-life-buoy offer__icon "></i>
+        <p class="offer__desc">Professional consulting</p>
+   </div>
+</div>
+</div>      
+<div class="about" id="about">
+    <p class="about__title">Our history</p>
+    <p class="about__desc">Volvo Cars started producing automobiles in Sweden in 1927. Today, we’re global, with sales in about 100 countries.
+
+        We focus always on innovation and world-leading safety technology. Our history of game-changing achievements positions Volvo Cars as one of the most respected and recognisable car brands in the world.
+        
+        Our award-winning Volvo cars continue to set new benchmarks in automotive safety and connectivity, and we are committed to our industry-leading vision for an all-electric future.</p>
+</div>        
+<div class="test" id="test">
+        <p class="test__title">Sign up for a test drive!</p>
+        <form action="#" method="post" class="test__form">
+            <input type="text" required name="name" placeholder="Please type in your full name" class="test__input">
+            <input type="email" required name="email" placeholder="Please type in your email" class="test__input">
+            <input type="text" required name="phone" placeholder="Please type in your phone number" class="test__input">
+            <button class="test__button" type="submit">Submit</button>
+        </form>
+</div>
+<footer class="footer">
+    
+</footer>
+ 
 <script src="js/main.js"></script>
 </body>
 </html>

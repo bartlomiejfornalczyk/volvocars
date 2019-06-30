@@ -5,13 +5,15 @@
     box-sizing: border-box;
     font-family: Raleway, sans-serif;
     font-size: 16px;
+    outline: none;
 }
 html{
     overflow-x: hidden;
+    /* scroll-behavior: smooth; */
 }
 body{
         overflow-x: hidden;
-    height: 100vh;
+    /* height: 100vh; */
     background: rgba(24,38,109,1);
 /* background: -moz-linear-gradient(45deg, rgba(51,82,240,1) 0%, rgba(24,38,109,1) 56%, rgba(24,38,109,1) 85%, rgba(24,38,109,1) 100%);
 background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(51,82,240,1)), color-stop(56%, rgba(24,38,109,1)), color-stop(85%, rgba(24,38,109,1)), color-stop(100%, rgba(24,38,109,1)));
@@ -51,7 +53,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3352f0', end
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
     transition: 0.5s;
     top:10vh;
@@ -71,8 +73,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3352f0', end
     color: white;
 }
 .cars{
-    margin-top:10vh;
-    padding:5px 0;
+    
+    padding:10vh 0 5px;
     display: inline-flex;
     align-items:flex-start;
     position: relative;
@@ -113,11 +115,26 @@ overflow: hidden;
     font-size: 2rem;
     font-weight: 900;
 }
+.cars__desc, .about__desc{
+    color:#ccc;
+    font-size: 0.9rem;
+}
 .cars__img{
     width: 100%;
 }
+.cars__button,.test__button{
+    background-color: rgba(24,38,109,1);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding:8px 14px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
 .slider{
     width: 100%;
+    margin-top:5vh;
     height: 15vh;
     display: flex;
     flex-grow: 1;
@@ -125,6 +142,7 @@ overflow: hidden;
     padding:0 10px;
 }
 .slider__item{
+    
       height: 70%;
       filter: opacity(0.5);
       cursor: pointer;
@@ -132,4 +150,88 @@ overflow: hidden;
 }
 .slider__item--active{
     filter: opacity(1);
+}
+.offer, .about, .test,.contact{
+    /* height: 90vh; */
+  
+    padding: 14vh 25px 0;
+    /* overflow: hidden; */
+}
+
+.offer__title, .about__title,.test__title{
+    color: white;
+    /* text-transform: uppercase; */
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+    /* padding-left:15px; */
+}
+.offer__list{
+    padding-top:20px;
+    list-style: circle;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 400px; */
+}
+.offer__icon{
+    font-size: 3rem;
+    color: rgba(24,38,109,1);
+}
+.offer__item{
+    width:150px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom:5px;
+}
+.offer__item--gray{
+    background-color: #eee;
+}
+.offer__desc{
+    padding-top:20px;
+    text-align: center;
+}
+.about{
+    /* padding-top:10vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about__title,.test__title{
+    padding-bottom:5vh;
+}
+.about__desc{
+    text-align: justify;
+    line-height: 1.3rem;
+}
+.test__form{
+    
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* height:200px; */
+}
+.test__input{
+    border:none;
+    background-color: #fff;
+    padding:15px 10px;
+    margin-bottom: 5px;
+}
+.test__input::placeholder{
+    font-size: 0.8rem;
+}
+.test__button{
+    margin-top:10px;
+    align-self: flex-start;
+    padding: 8px 20px;
+    /* background:rgba(24,38,109,1);
+    padding:5px 14px;
+    border:3px solid white;
+    color: white; */
 }
