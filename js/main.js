@@ -20,6 +20,7 @@ function showNav() {
         collapseNav();
     }
 }
+// window.onresize = function(){ location.reload(); }
 hdr = document.querySelector(".nav");
 let x = window.getComputedStyle(hdr).height;
 document.addEventListener("scroll", function(){
@@ -57,12 +58,13 @@ sliders.forEach(e => {
 });
 
 let cars = document.querySelector(".cars");
-let carsWidth = cars.offsetWidth;
-let move = carsWidth/howManySlides;
+
 let jitter =20;
 let last = 0;
 async function changeSlide(e)
 {
+    let carsWidth = cars.offsetWidth;
+let move = carsWidth/howManySlides;
     id = e.srcElement.id - 1;
     translate = id*move;
     // actual = cars.style.transform;
